@@ -1,9 +1,9 @@
-from utils.helpers import login
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 def test_login(login_driver):
+    #Valida que estoy en la pantalla principal, utiliza el fixture login_driver
     wait = WebDriverWait(login_driver,10)
     wait.until(EC.url_contains("inventory.html"))
     assert "inventory.html" in login_driver.current_url
@@ -15,6 +15,7 @@ def test_login(login_driver):
 
 
 def test_menu_productos(login_driver):
+    #Valida menu lateral en pantalla principal
     wait = WebDriverWait(login_driver, 10)
     menu_btn = wait.until(EC.element_to_be_clickable((By.ID,"react-burger-menu-btn")))
     menu_btn.click()
@@ -24,16 +25,19 @@ def test_menu_productos(login_driver):
     menu_cross_btn.click()
 
 def test_filtros_productos(login_driver):
+    #Valida filtros en pantalla principal
     wait = WebDriverWait(login_driver, 10)
     filters = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-test='product-sort-container']")))
     options = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "[data-test='product-sort-container'] option")))
     assert len(options) == 4
 
 def test_carrito_productos(login_driver):
+    #Valida logo carrito en pantalla principal
     wait = WebDriverWait(login_driver,10)
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-test='shopping-cart-link']")))
 
 def test_footer_productos(login_driver):
+    #Valida el footer de la pantalla principal
     wait = WebDriverWait(login_driver,10)
     footer_text = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,"[data-test='footer-copy']"))).text
     assert "Sauce Labs. All Rights Reserved." in footer_text
@@ -42,6 +46,7 @@ def test_footer_productos(login_driver):
 
 
 def test_catalogo_productos(login_driver):
+    #Valida que se visualicen los productos en la pantalla principal
     wait = WebDriverWait(login_driver, 10)
     title_element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,"[data-test='title']"))).text
     assert title_element == 'Products'
@@ -51,3 +56,12 @@ def test_catalogo_productos(login_driver):
     first_product_price = products[0].find_element(By.CSS_SELECTOR,"[data-test='inventory-item-price']").text
     assert first_product_name == 'Sauce Labs Backpack'
     assert first_product_price == '$29.99'
+
+def test_logout(login_driver):
+    #Valida cierre de sesion
+    wait = WebDriverWait(login_driver,10)
+    menu_btn = wait.until(EC.element_to_be_clickable((By.ID,"react-burger-menu-btn")))
+    menu_btn.click()
+    logout_btn = wait.until(EC.visibility_of_element_located((By.ID,"logout_sidebar_link")))
+    logout_btn.click()
+    assert "https://www.saucedemo.com/" in login_driver.current_url
