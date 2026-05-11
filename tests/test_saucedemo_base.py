@@ -7,11 +7,10 @@ def test_login(login_driver):
     wait = WebDriverWait(login_driver,10)
     wait.until(EC.url_contains("inventory.html"))
     assert "inventory.html" in login_driver.current_url
-    title_element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,"[data-test='title']")))
-    title = title_element.text
-    assert title == 'Products'
-    page_text = wait.until(EC.visibility_of_element_located((By.CLASS_NAME,"app_logo"))).text
-    assert page_text == 'Swag Labs'
+    titulo = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,"[data-test='title']"))).text
+    assert titulo == 'Products'
+    titulo_pagina = wait.until(EC.visibility_of_element_located((By.CLASS_NAME,"app_logo"))).text
+    assert titulo_pagina == 'Swag Labs'
 
 
 def test_menu_productos(login_driver):
@@ -19,17 +18,17 @@ def test_menu_productos(login_driver):
     wait = WebDriverWait(login_driver, 10)
     menu_btn = wait.until(EC.element_to_be_clickable((By.ID,"react-burger-menu-btn")))
     menu_btn.click()
-    menu_content = wait.until(EC.visibility_of_all_elements_located((By.CLASS_NAME, "bm-item")))
-    assert len(menu_content) == 4
-    menu_cross_btn = wait.until(EC.element_to_be_clickable((By.ID,"react-burger-cross-btn")))
-    menu_cross_btn.click()
+    menu_contenido = wait.until(EC.visibility_of_all_elements_located((By.CLASS_NAME, "bm-item")))
+    assert len(menu_contenido) == 4
+    menu_cruz_btn = wait.until(EC.element_to_be_clickable((By.ID,"react-burger-cross-btn")))
+    menu_cruz_btn.click()
 
 def test_filtros_productos(login_driver):
     #Valida filtros en pantalla principal
     wait = WebDriverWait(login_driver, 10)
-    filters = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-test='product-sort-container']")))
-    options = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "[data-test='product-sort-container'] option")))
-    assert len(options) == 4
+    filtros = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "[data-test='product-sort-container']")))
+    opciones = wait.until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, "[data-test='product-sort-container'] option")))
+    assert len(opciones) == 4
 
 def test_carrito_productos(login_driver):
     #Valida logo carrito en pantalla principal
@@ -39,23 +38,23 @@ def test_carrito_productos(login_driver):
 def test_footer_productos(login_driver):
     #Valida el footer de la pantalla principal
     wait = WebDriverWait(login_driver,10)
-    footer_text = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,"[data-test='footer-copy']"))).text
-    assert "Sauce Labs. All Rights Reserved." in footer_text
-    socials = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, ".social a")))
-    assert len(socials) == 3
+    footer_texto = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,"[data-test='footer-copy']"))).text
+    assert "Sauce Labs. All Rights Reserved." in footer_texto
+    redes = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, ".social a")))
+    assert len(redes) == 3
 
 
 def test_catalogo_productos(login_driver):
     #Valida que se visualicen los productos en la pantalla principal
     wait = WebDriverWait(login_driver, 10)
-    title_element = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,"[data-test='title']"))).text
-    assert title_element == 'Products'
-    products = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR,"[data-test='inventory-list']")))
-    assert len(products) > 0
-    first_product_name = products[0].find_element(By.CSS_SELECTOR,"[data-test='inventory-item-name']").text
-    first_product_price = products[0].find_element(By.CSS_SELECTOR,"[data-test='inventory-item-price']").text
-    assert first_product_name == 'Sauce Labs Backpack'
-    assert first_product_price == '$29.99'
+    titulo = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,"[data-test='title']"))).text
+    assert titulo == 'Products'
+    productos = wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR,"[data-test='inventory-list']")))
+    assert len(productos) > 0
+    primer_producto_nombre = productos[0].find_element(By.CSS_SELECTOR,"[data-test='inventory-item-name']").text
+    primer_producto_precio = productos[0].find_element(By.CSS_SELECTOR,"[data-test='inventory-item-price']").text
+    assert primer_producto_nombre == 'Sauce Labs Backpack'
+    assert primer_producto_precio == '$29.99'
 
 def test_logout(login_driver):
     #Valida cierre de sesion
