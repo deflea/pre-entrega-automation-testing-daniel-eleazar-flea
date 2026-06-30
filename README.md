@@ -45,7 +45,7 @@ Se utiliza uv como gestor de paquetes de python, instalarlo utilizando `pip inst
 	├── tests/
 	│   ├── api/
 	│	│	└── test_api_methods.py
-│   │	└── ui/
+    │	└── ui/
 	│		├── test_complete_checkout_flow.py
 	│		└── test_saucedemo_base.py
 	├── utils/
