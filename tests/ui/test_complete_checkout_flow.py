@@ -1,9 +1,12 @@
+import logging
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+logger = logging.getLogger(__name__)
+
 def test_agregar_producto(login_driver):
-    #Agrego el primer producto al carrito
+    logger.info("Paso 1: Agregando 'Sauce Labs Backpack' al carrito de compras")
     wait = WebDriverWait(login_driver,10)
     agregar_btn = wait.until(EC.element_to_be_clickable((By.ID, "add-to-cart-sauce-labs-backpack")))
     agregar_btn.click()
@@ -12,7 +15,7 @@ def test_agregar_producto(login_driver):
     badge = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-test='shopping-cart-badge']")))
     assert badge.text == "1"
 
-    #Redirijo al carrito y valido producto agregado
+    logger.info("Paso 2: Accediendo al carrito de compras y verificando el producto")
     badge.click()
     assert "cart.html" in login_driver.current_url
     titulo_carrito = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,"[data-test='title']"))).text
@@ -27,7 +30,7 @@ def test_agregar_producto(login_driver):
     wait.until(EC.visibility_of_element_located((By.ID,"remove-sauce-labs-backpack")))
     wait.until(EC.visibility_of_element_located((By.ID,"continue-shopping")))
 
-    #Redirijo a la proxima pantalla, completo los campos
+    logger.info("Paso 3: Iniciando Checkout y completando datos de envío")
     checkout_btn = wait.until(EC.visibility_of_element_located((By.ID,"checkout")))
     checkout_btn.click()
     assert "checkout-step-one.html" in login_driver.current_url
@@ -38,7 +41,7 @@ def test_agregar_producto(login_driver):
     wait.until(EC.presence_of_element_located((By.ID, "postal-code"))).send_keys("123")
     wait.until(EC.visibility_of_element_located((By.ID,"cancel")))
 
-    #Redirijo a la pantalla de confirmacion, valido los datos del producto
+    logger.info("Paso 4: Validando el desglose de precios finales e impuestos (Overview)")
     continuar_btn = wait.until(EC.visibility_of_element_located((By.ID,"continue")))
     continuar_btn.click()
     assert "checkout-step-two.html" in login_driver.current_url
@@ -57,7 +60,7 @@ def test_agregar_producto(login_driver):
     assert "$32.39" in precio_total
     wait.until(EC.visibility_of_element_located((By.ID,"cancel")))
 
-    #Redirijo a la pantalla de finalizacion del pedido, valido el mensaje y redirijo a pantalla principal
+    logger.info("Paso 5: Confirmando orden y verificando pantalla de éxito")
     finalizar_btn = wait.until(EC.visibility_of_element_located((By.ID,"finish")))
     finalizar_btn.click()
     assert "checkout-complete.html" in login_driver.current_url
@@ -68,4 +71,4 @@ def test_agregar_producto(login_driver):
     atras_btn = wait.until(EC.visibility_of_element_located((By.ID, "back-to-products")))
     atras_btn.click()
     assert "inventory.html" in login_driver.current_url
-
+    logger.info("Flujo completo de Checkout finalizado de manera exitosa")
