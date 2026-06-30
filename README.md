@@ -27,7 +27,8 @@ Se utiliza uv como gestor de paquetes de python, instalarlo utilizando `pip inst
 3. Ejecutar todos los tests:  
 `uv run pytest`
 4. Ejecutar un archivo especifico:
-`uv run pytest tests/test_saucedemo_base.py`
+`uv run pytest tests/ui/test_saucedemo_base.py`
+`uv run pytest tests/api/test_api_methods.py`
 5. Ejecutar y generar reporte:
 `uv run pytest -v --html=reports/report.html`
 
