@@ -1,6 +1,6 @@
 import logging
 import os
-import pytest_check as check  # Requisito de tu entrega: usar check en vez de assert
+import pytest_check as check
 from api.api_functions import get_users, get_all_posts, create_post, update_post, delete_post
 
 

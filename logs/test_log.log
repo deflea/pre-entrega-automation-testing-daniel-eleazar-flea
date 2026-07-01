@@ -1,34 +1,34 @@
-2026-06-30 19:33:57 - INFO - Iniciando test_get_users
-2026-06-30 19:33:57 - INFO - test_get_users completado con éxito
-2026-06-30 19:33:57 - INFO - Iniciando test_get_all_posts
-2026-06-30 19:33:57 - INFO - test_get_all_posts completado con éxito
-2026-06-30 19:33:57 - INFO - Iniciando test_create_post
-2026-06-30 19:33:58 - INFO - test_create_post completado con éxito
-2026-06-30 19:33:58 - INFO - Iniciando test_update_post
-2026-06-30 19:33:59 - INFO - test_update_post completado con éxito
-2026-06-30 19:33:59 - INFO - Iniciando test_delete_post
-2026-06-30 19:33:59 - INFO - test_delete_post completado con éxito
-2026-06-30 19:33:59 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
-2026-06-30 19:33:59 - INFO - ====== WebDriver manager ======
-2026-06-30 19:33:59 - INFO - Get LATEST geckodriver version for 152.0 firefox
-2026-06-30 19:33:59 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
-2026-06-30 19:33:59 - INFO - ====== WebDriver manager ======
-2026-06-30 19:33:59 - INFO - Get LATEST geckodriver version for 152.0 firefox
-2026-06-30 19:33:59 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
-2026-06-30 19:33:59 - INFO - ====== WebDriver manager ======
-2026-06-30 19:33:59 - INFO - Get LATEST geckodriver version for 152.0 firefox
-2026-06-30 19:34:00 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
-2026-06-30 19:34:00 - INFO - ====== WebDriver manager ======
-2026-06-30 19:34:00 - INFO - Get LATEST geckodriver version for 152.0 firefox
-2026-06-30 19:34:00 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
-2026-06-30 19:34:00 - INFO - ====== WebDriver manager ======
-2026-06-30 19:34:00 - INFO - Get LATEST geckodriver version for 152.0 firefox
-2026-06-30 19:34:00 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
-2026-06-30 19:34:00 - INFO - ====== WebDriver manager ======
-2026-06-30 19:34:00 - INFO - Get LATEST geckodriver version for 152.0 firefox
-2026-06-30 19:34:00 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
-2026-06-30 19:34:00 - INFO - ====== WebDriver manager ======
-2026-06-30 19:34:00 - INFO - Get LATEST geckodriver version for 152.0 firefox
-2026-06-30 19:34:01 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
-2026-06-30 19:34:01 - INFO - ====== WebDriver manager ======
-2026-06-30 19:34:01 - INFO - Get LATEST geckodriver version for 152.0 firefox
+2026-06-30 19:57:17 - INFO - Iniciando test_get_users
+2026-06-30 19:57:17 - INFO - test_get_users completado con éxito
+2026-06-30 19:57:17 - INFO - Iniciando test_get_all_posts
+2026-06-30 19:57:17 - INFO - test_get_all_posts completado con éxito
+2026-06-30 19:57:17 - INFO - Iniciando test_create_post
+2026-06-30 19:57:17 - INFO - test_create_post completado con éxito
+2026-06-30 19:57:17 - INFO - Iniciando test_update_post
+2026-06-30 19:57:17 - INFO - test_update_post completado con éxito
+2026-06-30 19:57:17 - INFO - Iniciando test_delete_post
+2026-06-30 19:57:18 - INFO - test_delete_post completado con éxito
+2026-06-30 19:57:18 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
+2026-06-30 19:57:18 - INFO - ====== WebDriver manager ======
+2026-06-30 19:57:18 - INFO - Get LATEST geckodriver version for 152.0 firefox
+2026-06-30 19:57:18 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
+2026-06-30 19:57:18 - INFO - ====== WebDriver manager ======
+2026-06-30 19:57:18 - INFO - Get LATEST geckodriver version for 152.0 firefox
+2026-06-30 19:57:18 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
+2026-06-30 19:57:18 - INFO - ====== WebDriver manager ======
+2026-06-30 19:57:18 - INFO - Get LATEST geckodriver version for 152.0 firefox
+2026-06-30 19:57:18 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
+2026-06-30 19:57:18 - INFO - ====== WebDriver manager ======
+2026-06-30 19:57:18 - INFO - Get LATEST geckodriver version for 152.0 firefox
+2026-06-30 19:57:19 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
+2026-06-30 19:57:19 - INFO - ====== WebDriver manager ======
+2026-06-30 19:57:19 - INFO - Get LATEST geckodriver version for 152.0 firefox
+2026-06-30 19:57:19 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
+2026-06-30 19:57:19 - INFO - ====== WebDriver manager ======
+2026-06-30 19:57:19 - INFO - Get LATEST geckodriver version for 152.0 firefox
+2026-06-30 19:57:19 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
+2026-06-30 19:57:19 - INFO - ====== WebDriver manager ======
+2026-06-30 19:57:19 - INFO - Get LATEST geckodriver version for 152.0 firefox
+2026-06-30 19:57:19 - INFO - === INICIANDO INSTANCIA DEL NAVEGADOR ===
+2026-06-30 19:57:19 - INFO - ====== WebDriver manager ======
+2026-06-30 19:57:19 - INFO - Get LATEST geckodriver version for 152.0 firefox
